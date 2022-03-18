@@ -4,7 +4,7 @@
    @author Timothy M. Henry
    @version 5.0
 */
-public interface StackInterface<T>
+public interface convertToPostfix<T>
 {
    /** Adds a new entry to the top of this stack.
        @param newEntry  An object to be added to the stack. */
@@ -26,4 +26,4 @@ public interface StackInterface<T>
   
    /** Removes all entries from this stack. */
    public void clear();
-} // end StackInterface 1
+} // end convertToPostfix 1
