@@ -26,4 +26,37 @@ public interface StackInterface<T>
   
    /** Removes all entries from this stack. */
    public void clear();
+    
+    //we set the cases for a statement that will be inputed into the stack and operator stack
+   static int operation(char operator)
+    {
+        switch (operator)
+        //by seperating the operations into the standard format of PEMDAS, it also will be seperated like in the stack
+        // If 2 is before 1 then the priority falls upon 2 unless a parenthesis is involved
+        // The missing search is the Parenthesis but that algorithm will follow this one 
+        {
+               case '+':
+               case '-':
+               return 1;
+      
+              case '*':
+              case '/':
+              return 2;
+      
+              case '^':
+              return 3;
+        }
+        //the return of -1 nullfies the operation value and highilghts that there is nothing else to add to the stack or just add nothing.
+        return -1;
+    }
+   static String convertInfixToPostfixAlgorithm(String equation)
+    {
+    
+         // initializing empty stack in order to output the operators correctly
+        Stack<Character> stack = new Stack<>();
+        
+        // Sets a string to be created in order to put our brand new expression inside it
+        String result = new String("");
+         
+       
 } // end StackInterface 1
